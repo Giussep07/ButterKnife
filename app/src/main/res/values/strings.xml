@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ButterKnife</string>
+    <string name="text_login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="notAccount">I don\'t have an account?</string>
+    <string name="register">Register</string>
+</resources>
