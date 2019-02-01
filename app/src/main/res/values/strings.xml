@@ -5,4 +5,5 @@
     <string name="password">Password</string>
     <string name="notAccount">I don\'t have an account?</string>
     <string name="register">Register</string>
+    <string name="remember_me">Remember me</string>
 </resources>

@@ -4,65 +4,76 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:focusableInTouchMode="true"
     android:padding="16dp"
-    tools:context=".LoginActivity">
+    tools:context=".login.view.LoginActivity">
 
     <TextView
         android:id="@+id/textViewLogin"
         style="@style/TextAppearance.MaterialComponents.Headline5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/text_login"
-        app:layout_constraintBottom_toTopOf="@id/linearEditTexts"
+        app:layout_constraintBottom_toTopOf="@id/scrollViewForm"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <androidx.appcompat.widget.LinearLayoutCompat
-        android:id="@+id/linearEditTexts"
+    <ScrollView
+        android:id="@+id/scrollViewForm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/buttonLogin"
         app:layout_constraintTop_toBottomOf="@id/textViewLogin">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputEmail"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linearEditTexts"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:hint="@string/email"
-            app:layout_constraintBottom_toTopOf="@id/textInputPassword"
-            app:layout_constraintTop_toBottomOf="@+id/textViewLogin">
+            android:orientation="vertical">
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextEmail"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputEmail"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:layout_marginBottom="16dp"
+                android:hint="@string/email">
 
-        </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/textInputPassword"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="@string/password"
-            app:layout_constraintBottom_toTopOf="@id/buttonLogin"
-            app:layout_constraintTop_toBottomOf="@+id/textInputEmail">
+            </com.google.android.material.textfield.TextInputLayout>
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/editTextPassword"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputPassword"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="textPassword"
-                android:imeOptions="actionDone"/>
+                android:layout_marginBottom="16dp"
+                android:hint="@string/password">
 
-        </com.google.android.material.textfield.TextInputLayout>
-    </androidx.appcompat.widget.LinearLayoutCompat>
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editTextPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <CheckBox
+                android:id="@+id/checkBoxRemember"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/remember_me" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonLogin"
@@ -73,13 +84,14 @@
         app:cornerRadius="6dp"
         app:layout_constraintBottom_toTopOf="@id/textViewNewAccount"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linearEditTexts" />
+        app:layout_constraintTop_toBottomOf="@id/scrollViewForm" />
 
     <TextView
         android:id="@+id/textViewNewAccount"
         style="?attr/textAppearanceCaption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
         android:text="@string/notAccount"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
