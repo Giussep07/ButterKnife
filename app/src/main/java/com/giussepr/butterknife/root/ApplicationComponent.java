@@ -1,18 +1,33 @@
 package com.giussepr.butterknife.root;
 
-import com.giussepr.butterknife.dataBase.LocalDataSource;
-import com.giussepr.butterknife.login.LoginModule;
-import com.giussepr.butterknife.login.view.LoginActivity;
+import android.app.Application;
 
 import javax.inject.Singleton;
 
+import dagger.BindsInstance;
 import dagger.Component;
+import dagger.android.AndroidInjector;
+import dagger.android.support.AndroidSupportInjectionModule;
 
 @Singleton
-@Component(modules = {ApplicationModule.class, LoginModule.class})
-public interface ApplicationComponent {
+@Component(modules = {ApplicationModule.class,
+        ActivityBindingModule.class,
+        AndroidSupportInjectionModule.class,
+        UserRepositoryModule.class})
+public interface ApplicationComponent extends AndroidInjector<ApplicationClass> {
 
-    void inject(LoginActivity loginActivity);
+    @Component.Builder
+    interface Builder {
 
-    LocalDataSource roomDataSource();
+        @BindsInstance
+        ApplicationComponent.Builder application(Application application);
+
+        ApplicationComponent build();
+    }
+
+//    void inject(LoginActivity loginActivity);
+//
+//    void inject(RegisterActivity registerActivity);
+//
+//    LocalDataSource roomDataSource();
 }

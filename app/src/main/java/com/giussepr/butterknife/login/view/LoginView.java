@@ -1,5 +1,7 @@
 package com.giussepr.butterknife.login.view;
 
+import com.giussepr.butterknife.models.User;
+
 public interface LoginView {
     String getEmail();
 
@@ -7,7 +9,23 @@ public interface LoginView {
 
     void showUserNotExist();
 
-    void showInputError();
+    void showPasswordIncorrect();
 
-    void loginSuccess();
+    void showEmailError(int error);
+
+    void showPasswordError();
+
+    void loginSuccess(User user);
+
+    void openRegisterActivity();
+
+    void disableUIElements();
+
+    void enableUIElements();
+
+    void showProgress();
+
+    void hideProgress();
+
+    void resetFieldsErrors();
 }

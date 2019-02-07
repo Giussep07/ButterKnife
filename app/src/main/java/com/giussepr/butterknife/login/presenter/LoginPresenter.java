@@ -1,6 +1,6 @@
 package com.giussepr.butterknife.login.presenter;
 
-import com.giussepr.butterknife.login.data.User;
+import com.giussepr.butterknife.models.User;
 import com.giussepr.butterknife.login.view.LoginView;
 
 public interface LoginPresenter {
@@ -10,5 +10,7 @@ public interface LoginPresenter {
     void loginButtonClicked();
 
     User getRememberedUser();
+
+    void registerButtonClicked();
 
 }

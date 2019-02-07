@@ -1,8 +1,12 @@
 package com.giussepr.butterknife.login.model;
 
-import com.giussepr.butterknife.login.data.User;
+import com.giussepr.butterknife.models.User;
+
+import io.reactivex.Single;
 
 public interface LoginModel {
 
-    User loginUser(String email, String password);
+    Single<User> loginUser(String email);
+
+    Single<User> loginUser(String email, String password);
 }

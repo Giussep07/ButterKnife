@@ -6,4 +6,16 @@
     <string name="notAccount">I don\'t have an account?</string>
     <string name="register">Register</string>
     <string name="remember_me">Remember me</string>
+    <string name="text_register">Register</string>
+    <string name="displayName">Display name</string>
+    <string name="confirmPassword">Confirm password</string>
+    <string name="empty_field">This field can\'t be empty.</string>
+    <string name="invalid_email_format">Invalid email format.</string>
+    <string name="user_create_error">An error has occurred creating user, please try again.</string>
+    <string name="user_created_successfully">User created successfully.</string>
+    <string name="displayName_already_exist">DisplayName already exist.</string>
+    <string name="email_already_exist">Email already exist.</string>
+    <string name="user_not_exist">User not exist.</string>
+    <string name="password_incorrect">Password incorrect.</string>
+
 </resources>

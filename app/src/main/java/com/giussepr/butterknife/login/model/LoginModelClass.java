@@ -1,18 +1,30 @@
 package com.giussepr.butterknife.login.model;
 
-import com.giussepr.butterknife.login.data.User;
-import com.giussepr.butterknife.login.repository.LoginRepository;
+import com.giussepr.butterknife.models.User;
+import com.giussepr.butterknife.source.UserDataSource;
+
+import javax.inject.Inject;
+
+import androidx.annotation.Nullable;
+import io.reactivex.Single;
 
 public class LoginModelClass implements LoginModel {
 
-    private LoginRepository repository;
+    @Nullable
+    private UserDataSource repository;
 
-    public LoginModelClass(LoginRepository repository) {
+    @Inject
+    public LoginModelClass(UserDataSource repository) {
         this.repository = repository;
     }
 
     @Override
-    public User loginUser(String email, String password) {
+    public Single<User> loginUser(String email) {
+        return repository.loginUser(email);
+    }
+
+    @Override
+    public Single<User> loginUser(String email, String password) {
         return repository.loginUser(email, password);
     }
 }

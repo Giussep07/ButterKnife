@@ -8,7 +8,7 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -25,14 +25,15 @@ android {
 ext {
     butterKnifeVersion = '10.0.0'
     daggerVersion = '2.21'
-    roomVersion = '1.1.1'
+    roomVersion = '2.1.0-alpha04'
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'androidx.appcompat:appcompat:1.0.0-beta01'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    androidTestImplementation 'androidx.test:runner:1.1.2-alpha01'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.2-alpha01'
 
     //Butter Knife
     implementation "com.jakewharton:butterknife:$butterKnifeVersion"
@@ -45,9 +46,20 @@ dependencies {
     implementation "com.google.dagger:dagger:$daggerVersion"
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
 
+    implementation "com.google.dagger:dagger-android:$daggerVersion"
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion" // if you use the support libraries
+    annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
+
     //Room
-    implementation "android.arch.persistence.room:runtime:$roomVersion"
-    annotationProcessor "android.arch.persistence.room:compiler:$roomVersion"
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+
+    //RxJava support for Room
+    implementation "androidx.room:room-rxjava2:$roomVersion"
+
+    //RxJava
+    implementation "io.reactivex.rxjava2:rxjava:2.2.6"
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.0'
 
     //Stetho
     implementation "com.facebook.stetho:stetho:1.5.0"

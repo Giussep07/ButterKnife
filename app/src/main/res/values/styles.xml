@@ -31,6 +31,13 @@
 
         <!-- ESTILOS PARA EL TOOLBAR -->
         <item name="toolbarStyle">@style/Theme.MyApp.Toolbar</item>
+
+        <!-- enable window content transitions -->
+        <item name="android:windowActivityTransitions">true</item>
+
+        <!-- specify enter and exit transitions -->
+        <item name="android:windowEnterTransition">@transition/explode</item>
+        <item name="android:windowExitTransition">@transition/explode</item>
     </style>
 
     <style name="Theme.MyApp.Toolbar" parent="Widget.MaterialComponents.Toolbar">
