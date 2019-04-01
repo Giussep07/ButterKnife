@@ -12,20 +12,4 @@ public abstract class ApplicationModule {
 
     @Binds
     abstract Context bindContext(Application application);
-
-//    public ApplicationModule(Application application) {
-//        this.application = application;
-//    }
-//
-//    @Provides
-//    @Singleton
-//    public Context provideContext() {
-//        return application;
-//    }
-//
-//    @Singleton
-//    @Provides
-//    public LocalDataSource provideRoomDataSource() {
-//        return Room.databaseBuilder(application, LocalDataSource.class, "butterKnife").build();
-//    }
 }

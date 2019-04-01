@@ -2,15 +2,12 @@ package com.giussepr.butterknife.register.model;
 
 import com.giussepr.butterknife.models.EmailDisplayName;
 import com.giussepr.butterknife.models.User;
-import com.giussepr.butterknife.source.UserRepository;
-
-import java.util.List;
+import com.giussepr.butterknife.dataSource.UserRepository;
 
 import javax.inject.Inject;
 
 import androidx.annotation.Nullable;
 import io.reactivex.Completable;
-import io.reactivex.Flowable;
 import io.reactivex.Maybe;
 
 public class RegisterModelClass implements RegisterModel {

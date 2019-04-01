@@ -1,7 +1,7 @@
 package com.giussepr.butterknife.login.model;
 
 import com.giussepr.butterknife.models.User;
-import com.giussepr.butterknife.source.UserDataSource;
+import com.giussepr.butterknife.dataSource.UserDataSource;
 
 import javax.inject.Inject;
 

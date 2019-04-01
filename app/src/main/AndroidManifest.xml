@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.giussepr.butterknife">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
         android:name=".root.ApplicationClass"
         android:allowBackup="true"
@@ -10,7 +14,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApp">
-        <activity android:name=".register.view.RegisterActivity"></activity>
+
         <activity
             android:name=".login.view.LoginActivity"
             android:windowSoftInputMode="adjustResize">
@@ -19,6 +23,28 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity android:name=".register.view.RegisterActivity" />
+
+        <activity
+            android:name=".home.view.HomeActivity"
+            android:theme="@style/Theme.MyApp.ActivityWithToolbar">
+
+            <meta-data android:name="android.app.default_searchable"
+                android:value=".searchResult.view.SearchResultActivity" />
+        </activity>
+
+        <activity
+            android:name=".searchResult.view.SearchResultActivity"
+            android:label="Search results"
+            android:theme="@style/Theme.MyApp.ActivityWithToolbar"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
         </activity>
     </application>
 

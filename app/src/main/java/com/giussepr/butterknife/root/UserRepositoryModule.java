@@ -2,10 +2,10 @@ package com.giussepr.butterknife.root;
 
 import android.app.Application;
 
-import com.giussepr.butterknife.source.UserDataSource;
-import com.giussepr.butterknife.source.local.LocalDataSource;
-import com.giussepr.butterknife.source.local.User.UserDao;
-import com.giussepr.butterknife.source.local.User.UserLocalDataSource;
+import com.giussepr.butterknife.dataSource.UserDataSource;
+import com.giussepr.butterknife.dataSource.local.LocalDataSource;
+import com.giussepr.butterknife.dataSource.local.User.UserDao;
+import com.giussepr.butterknife.dataSource.local.User.UserLocalDataSource;
 
 import javax.inject.Singleton;
 

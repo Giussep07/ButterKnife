@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/mtrl_card_spacing"
+    android:layout_marginTop="@dimen/mtrl_card_spacing"
+    android:layout_marginRight="@dimen/mtrl_card_spacing"
+    app:cardCornerRadius="4dp"
+    app:cardElevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerUserInfo"
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:padding="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.core.widget.ContentLoadingProgressBar
+                android:id="@+id/progressBarImgUser"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/imgUser"
+                app:layout_constraintEnd_toEndOf="@id/imgUser"
+                app:layout_constraintStart_toStartOf="@id/imgUser"
+                app:layout_constraintTop_toTopOf="@id/imgUser" />
+
+            <ImageView
+                android:id="@+id/imgUser"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/ic_emoticon_24dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewUsername"
+                style="@style/TextAppearance.MaterialComponents.Headline6"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:text="@string/username"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/imgUser"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textViewUserId"
+                style="@style/TextAppearance.MaterialComponents.Caption"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="123456"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/textViewUsername"
+                app:layout_constraintTop_toBottomOf="@id/textViewUsername" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.core.widget.ContentLoadingProgressBar
+            android:id="@+id/progressBarImage"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@id/image"
+            app:layout_constraintEnd_toEndOf="@id/image"
+            app:layout_constraintStart_toStartOf="@id/image"
+            app:layout_constraintTop_toTopOf="@id/image" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="194dp"
+            app:layout_constraintBottom_toTopOf="@id/containerImageDetail"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/containerUserInfo" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/containerImageDetail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="16dp"
+            android:paddingTop="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/image">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:id="@+id/linearTags"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </HorizontalScrollView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>

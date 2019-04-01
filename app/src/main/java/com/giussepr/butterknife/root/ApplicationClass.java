@@ -1,10 +1,6 @@
 package com.giussepr.butterknife.root;
 
-import android.app.Application;
-
 import com.facebook.stetho.Stetho;
-import com.giussepr.butterknife.login.LoginModule;
-import com.giussepr.butterknife.register.RegisterModule;
 
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;

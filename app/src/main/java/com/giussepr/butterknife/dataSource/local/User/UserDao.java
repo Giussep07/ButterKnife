@@ -1,4 +1,4 @@
-package com.giussepr.butterknife.source.local.User;
+package com.giussepr.butterknife.dataSource.local.User;
 
 
 import com.giussepr.butterknife.models.User;

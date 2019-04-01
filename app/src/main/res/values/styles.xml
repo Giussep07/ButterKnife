@@ -44,4 +44,10 @@
         <item name="titleTextColor">@color/primaryTextColor</item>
     </style>
 
+    <style name="Theme.MyApp.ActivityWithToolbar" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryDark">@color/primaryDarkColor</item>
+        <item name="colorAccent">@color/primaryLightColor</item>
+    </style>
+
 </resources>

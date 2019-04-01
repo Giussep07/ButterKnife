@@ -26,6 +26,7 @@ ext {
     butterKnifeVersion = '10.0.0'
     daggerVersion = '2.21'
     roomVersion = '2.1.0-alpha04'
+    retrofitVersion = '2.5.0'
 }
 
 dependencies {
@@ -47,7 +48,7 @@ dependencies {
     annotationProcessor "com.google.dagger:dagger-compiler:$daggerVersion"
 
     implementation "com.google.dagger:dagger-android:$daggerVersion"
-    implementation "com.google.dagger:dagger-android-support:$daggerVersion" // if you use the support libraries
+    implementation "com.google.dagger:dagger-android-support:$daggerVersion"
     annotationProcessor "com.google.dagger:dagger-android-processor:$daggerVersion"
 
     //Room
@@ -63,4 +64,20 @@ dependencies {
 
     //Stetho
     implementation "com.facebook.stetho:stetho:1.5.0"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    //Parseo JSON
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    //RxJava adapter
+    implementation "com.squareup.retrofit2:adapter-rxjava2:$retrofitVersion"
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.5'
+
+    //Logging HTTP
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.11.0'
+
+    //glide
+    implementation 'com.github.bumptech.glide:glide:3.8.0'
 }

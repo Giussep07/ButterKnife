@@ -17,5 +17,9 @@
     <string name="email_already_exist">Email already exist.</string>
     <string name="user_not_exist">User not exist.</string>
     <string name="password_incorrect">Password incorrect.</string>
+    <string name="username">Username</string>
+    <string name="label_tag">Tag</string>
+    <string name="search_hint">Query</string>
+    <string name="search">Search</string>
 
 </resources>

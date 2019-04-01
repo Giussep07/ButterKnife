@@ -1,17 +1,3 @@
-*.iml
-.gradle
-/local.properties
-/.idea/caches
-/.idea/libraries
-/.idea/modules.xml
-/.idea/workspace.xml
-/.idea/navEditor.xml
-/.idea/assetWizardSettings.xml
-.DS_Store
-/build
-/captures
-.externalNativeBuild
-
 
 # Created by https://www.gitignore.io/api/android,androidstudio
 # Edit at https://www.gitignore.io/?templates=android,androidstudio
@@ -61,17 +47,12 @@ captures/
 .idea/dictionaries
 .idea/libraries
 .idea/caches
-
-# Keystore files
-# Uncomment the following lines if you do not want to check your keystore files in.
-#*.jks
-#*.keystore
+# Android Studio 3 in .gitignore file.
+.idea/caches/build_file_checksums.ser
+.idea/modules.xml
 
 # External native build folder generated in Android Studio 2.2 and later
 .externalNativeBuild
-
-# Google Services (e.g. APIs or Firebase)
-google-services.json
 
 # Freeline
 freeline.py
@@ -85,8 +66,19 @@ fastlane/screenshots
 fastlane/test_output
 fastlane/readme.md
 
+# Version control
+vcs.xml
+
+# lint
+lint/intermediates/
+lint/generated/
+lint/outputs/
+lint/tmp/
+# lint/reports/
+
 ### Android Patch ###
 gen-external-apklibs
+output.json
 
 ### AndroidStudio ###
 # Covers files to be ignored for android development using Android Studio.
@@ -141,7 +133,6 @@ obj/
 .idea/copyright/profiles_settings.xml
 .idea/encodings.xml
 .idea/misc.xml
-.idea/modules.xml
 .idea/scopes/scope_settings.xml
 .idea/vcs.xml
 .idea/jsLibraryMappings.xml
@@ -196,5 +187,7 @@ fabric.properties
 ### AndroidStudio Patch ###
 
 !/gradle/wrapper/gradle-wrapper.jar
+
+app/app.iml
 
 # End of https://www.gitignore.io/api/android,androidstudio

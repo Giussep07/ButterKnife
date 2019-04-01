@@ -1,7 +1,7 @@
-package com.giussepr.butterknife.source.local;
+package com.giussepr.butterknife.dataSource.local;
 
 import com.giussepr.butterknife.models.User;
-import com.giussepr.butterknife.source.local.User.UserDao;
+import com.giussepr.butterknife.dataSource.local.User.UserDao;
 
 import androidx.room.Database;
 import androidx.room.RoomDatabase;

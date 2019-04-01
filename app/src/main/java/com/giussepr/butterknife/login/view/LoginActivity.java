@@ -9,9 +9,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.giussepr.butterknife.R;
+import com.giussepr.butterknife.home.view.HomeActivity;
 import com.giussepr.butterknife.login.presenter.LoginPresenter;
 import com.giussepr.butterknife.models.User;
 import com.giussepr.butterknife.register.view.RegisterActivity;
+import com.giussepr.butterknife.dataSource.remote.PixabayClient;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -128,6 +130,8 @@ public class LoginActivity extends DaggerAppCompatActivity implements LoginView 
     @Override
     public void loginSuccess(User user) {
         Toast.makeText(this, "Login user successful 🤘. " + user.getDisplayName(), Toast.LENGTH_SHORT).show();
+        Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+        startActivity(intent);
     }
 
     @Override

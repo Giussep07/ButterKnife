@@ -1,4 +1,4 @@
-package com.giussepr.butterknife.source;
+package com.giussepr.butterknife.dataSource;
 
 import com.giussepr.butterknife.models.User;
 import com.giussepr.butterknife.models.EmailDisplayName;

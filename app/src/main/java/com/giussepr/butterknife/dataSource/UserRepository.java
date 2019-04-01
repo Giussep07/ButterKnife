@@ -1,43 +1,42 @@
-package com.giussepr.butterknife.source.local.User;
+package com.giussepr.butterknife.dataSource;
 
 import com.giussepr.butterknife.models.EmailDisplayName;
 import com.giussepr.butterknife.models.User;
-import com.giussepr.butterknife.source.UserDataSource;
 
 import javax.inject.Inject;
-import javax.inject.Singleton;
 
 import io.reactivex.Completable;
 import io.reactivex.Maybe;
 import io.reactivex.Single;
 
-@Singleton
-public class UserLocalDataSource implements UserDataSource {
+public class UserRepository implements UserDataSource {
 
-    private UserDao userDao;
+    private final UserDataSource userLocalDataSource;
 
     @Inject
-    public UserLocalDataSource(UserDao userDao) {
-        this.userDao = userDao;
+    UserRepository(UserDataSource userLocalDataSource) {
+        this.userLocalDataSource = userLocalDataSource;
     }
 
     @Override
     public Single<User> loginUser(String email) {
-        return userDao.loginUser(email);
+        return userLocalDataSource.loginUser(email);
     }
 
     @Override
     public Single<User> loginUser(String email, String password) {
-        return userDao.loginUser(email, password);
+        return userLocalDataSource.loginUser(email, password);
     }
 
     @Override
     public Completable createUser(User user) {
-        return userDao.insertUser(user);
+        return userLocalDataSource.createUser(user);
     }
 
     @Override
     public Maybe<EmailDisplayName> checkUserExist(String email, String displayName) {
-        return userDao.checkUserEmailExist(email, displayName);
+
+        return userLocalDataSource.checkUserExist(email, displayName)
+                .map(user -> user);
     }
 }

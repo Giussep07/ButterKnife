@@ -2,6 +2,9 @@ package com.giussepr.butterknife.root;
 
 import android.app.Application;
 
+import com.giussepr.butterknife.home.HomeModule;
+import com.giussepr.butterknife.searchResult.SearchResultModule;
+
 import javax.inject.Singleton;
 
 import dagger.BindsInstance;
@@ -13,7 +16,10 @@ import dagger.android.support.AndroidSupportInjectionModule;
 @Component(modules = {ApplicationModule.class,
         ActivityBindingModule.class,
         AndroidSupportInjectionModule.class,
-        UserRepositoryModule.class})
+        UserRepositoryModule.class,
+        HomeModule.class,
+        PixabayRepositoryModule.class,
+        SearchResultModule.class})
 public interface ApplicationComponent extends AndroidInjector<ApplicationClass> {
 
     @Component.Builder
